@@ -10,8 +10,8 @@ config_version=5
 
 [application]
 
-config/name="Overgrown Subway"
-run/main_scene="res://register_login.tscn"
+config/name="GameTest3"
+run/main_scene="res://login/register_login.tscn"
 config/features=PackedStringArray("4.0", "Forward Plus")
 config/icon="res://project_icon.png"
 

@@ -1,4 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dtyan77lcbasj"]
+[gd_scene load_steps=4 format=3 uid="uid://dtyan77lcbasj"]
+
+[ext_resource type="Texture2D" uid="uid://brgiby8t04lli" path="res://login/login_bg.webp" id="1_yhpp8"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xv6mv"]
 
 [sub_resource type="PipelineECS" id="PipelineECS_tfsun"]
 pipeline_name = &"Main"
@@ -12,12 +16,18 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="LoginBg" type="Sprite2D" parent="."]
+position = Vector2(964.5, 542.25)
+scale = Vector2(1.00156, 1.034)
+texture = ExtResource("1_yhpp8")
+
 [node name="LoginPanel" type="VBoxContainer" parent="."]
+material = SubResource("CanvasItemMaterial_xv6mv")
 layout_mode = 0
-offset_left = 288.0
-offset_top = 212.0
-offset_right = 738.0
-offset_bottom = 456.0
+offset_left = 430.0
+offset_top = 378.0
+offset_right = 1287.0
+offset_bottom = 761.0
 alignment = 1
 
 [node name="Account" type="HBoxContainer" parent="LoginPanel"]
@@ -28,12 +38,15 @@ alignment = 1
 [node name="Label" type="Label" parent="LoginPanel/Account"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.145098, 0.172549, 0.0941176, 1)
+theme_override_font_sizes/font_size = 32
 text = "Account"
 horizontal_alignment = 2
 
 [node name="AccountInput" type="LineEdit" parent="LoginPanel/Account"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 placeholder_text = "input username"
 
 [node name="Password" type="HBoxContainer" parent="LoginPanel"]
@@ -44,23 +57,27 @@ alignment = 1
 [node name="Label" type="Label" parent="LoginPanel/Password"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
 text = "Password"
 horizontal_alignment = 2
 
 [node name="PasswordInput" type="LineEdit" parent="LoginPanel/Password"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 32
 placeholder_text = "input password"
 secret = true
 
 [node name="MarginContainer" type="MarginContainer" parent="LoginPanel"]
 layout_mode = 2
-theme_override_constants/margin_top = 20
+theme_override_constants/margin_top = 40
 
 [node name="Button" type="Button" parent="LoginPanel/MarginContainer"]
-custom_minimum_size = Vector2(100, 0)
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 32
 text = "login"
 
 [node name="WorldECS" type="WorldECS" parent="." groups=["_bind_data_autogen_group"]]
