@@ -48,15 +48,15 @@ text = "SSAO"
 [node name="glow" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 button_pressed = true
-text = "Glow"
+text = "辉光"
 
 [node name="fps_toggle" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Show FPS          "
+text = "显示 FPS          "
 
 [node name="gamepad_invert" type="CheckButton" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Invert Y"
+text = "反转 Y"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -65,7 +65,7 @@ alignment = 2
 
 [node name="mouse_sens_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Mouse Sensitivity"
+text = "鼠标灵敏度"
 
 [node name="mouse_sens" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(200, 0)
@@ -85,7 +85,7 @@ alignment = 2
 
 [node name="control_sens_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
-text = "Gamepad Sensitivity"
+text = "手柄灵敏度"
 
 [node name="control_sens" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer2"]
 custom_minimum_size = Vector2(200, 0)
@@ -105,7 +105,7 @@ alignment = 2
 
 [node name="volume_label" type="Label" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
-text = "Volume"
+text = "音量"
 
 [node name="volume" type="HSlider" parent="MarginContainer/VBoxContainer/HBoxContainer3"]
 custom_minimum_size = Vector2(200, 0)
@@ -120,11 +120,11 @@ text = "10.0"
 
 [node name="resume" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "RESUME"
+text = "恢复"
 
 [node name="quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "QUIT"
+text = "退出"
 
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ssil_button" to="." method="_on_ssil_button_toggled"]
 [connection signal="toggled" from="MarginContainer/VBoxContainer/ssao_button" to="." method="_on_ssao_button_toggled"]
