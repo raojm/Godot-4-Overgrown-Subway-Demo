@@ -1,0 +1,93 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtyan77lcbasj"]
+
+[sub_resource type="PipelineECS" id="PipelineECS_tfsun"]
+pipeline_name = &"Main"
+system_bundles = PackedStringArray("Rendering 3D", "Physics")
+
+[node name="Root" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoginPanel" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 288.0
+offset_top = 212.0
+offset_right = 738.0
+offset_bottom = 456.0
+alignment = 1
+
+[node name="Account" type="HBoxContainer" parent="LoginPanel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="LoginPanel/Account"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Account"
+horizontal_alignment = 2
+
+[node name="AccountInput" type="LineEdit" parent="LoginPanel/Account"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "input username"
+
+[node name="Password" type="HBoxContainer" parent="LoginPanel"]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 1
+
+[node name="Label" type="Label" parent="LoginPanel/Password"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Password"
+horizontal_alignment = 2
+
+[node name="PasswordInput" type="LineEdit" parent="LoginPanel/Password"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "input password"
+secret = true
+
+[node name="MarginContainer" type="MarginContainer" parent="LoginPanel"]
+layout_mode = 2
+theme_override_constants/margin_top = 20
+
+[node name="Button" type="Button" parent="LoginPanel/MarginContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "login"
+
+[node name="WorldECS" type="WorldECS" parent="." groups=["_bind_data_autogen_group"]]
+active_pipeline = &"Main"
+predefined_entity_dict = {
+"EnemyPlayer": Array[int]([]),
+"MyPet": Array[int]([]),
+"MyPlayer": Array[int]([1015, 1014, 1007]),
+"TeamPlayer": Array[int]([])
+}
+goto_scene_name = &"subway/subway.tscn"
+pipelines/Main = SubResource("PipelineECS_tfsun")
+metadata/bind_data_autogen = Object(NodeBindDatasMetaObject,"goto_now":Object(BindEntityDataDialogBinds,"TargetProperty":"goto_now","Expression":"sss","Param1":Object(EntityProxyDataEdit,"current_entity_idx":5,"current_component_idx":2,"current_component_property_idx":0,"TargetEntityKey":"MyPlayer","EntityComponentKey":1015,"ComponentPropertyKey":"UIN","script":null)
+,"script":null)
+,"script":null)
+
+
+[node name="ECSSendRquestNode" type="ECSSendRquestNode" parent="."]
+AuthenRequestForm = Object(SendRquestEntityObject,"UnrealComponent::EntitySendRequest":true,"UnrealComponent::EntitySendRequest/TimeMS":0,"PlayerComponent::AuthenRequest":true,"PlayerComponent::AuthenRequest/name":"aaaaaaaaaa","PlayerComponent::AuthenRequest/password":"bbbbbbbb","UnrealComponent::MassEntityUniqueID":true,"UnrealComponent::MassEntityUniqueID/UniqueID":11,"_SendRequestEntityPropertyBindDict":{
+"PlayerComponent::AuthenRequest/name": Object(BindEntityDataDialogBinds,"TargetProperty":"PlayerComponent::AuthenRequest/name","Expression":"","Param1":Object(BindNodePropertyObject,"TargetNodePath":NodePath("../LoginPanel/Account/AccountInput"),"TargetPropertyName":"text","TargetSigalName":"","script":null)
+,"script":null)
+,
+"PlayerComponent::AuthenRequest/password": Object(BindEntityDataDialogBinds,"TargetProperty":"PlayerComponent::AuthenRequest/password","Expression":"","Param1":Object(BindNodePropertyObject,"TargetNodePath":NodePath("../LoginPanel/Password/PasswordInput"),"TargetPropertyName":"text","TargetSigalName":"","script":null)
+,"script":null)
+,
+"UnrealComponent::LocalRequestTag": Object(BindEntityDataDialogBinds,"TargetProperty":"UnrealComponent::LocalRequestTag","Expression":"","Param1":Object(BindNodePropertyObject,"TargetNodePath":NodePath("../LoginPanel/MarginContainer/Button"),"TargetPropertyName":"","TargetSigalName":"pressed","script":null)
+,"script":null)
+
+},"script":null)
+
